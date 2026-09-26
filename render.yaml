@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: golden-hour-backend
+    env: node
+    plan: free
+    rootDir: golden-hour-backend
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: MONGO_URI
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: CLIENT_ORIGIN
+        value: "*"
