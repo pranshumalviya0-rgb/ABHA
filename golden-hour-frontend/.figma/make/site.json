@@ -1,0 +1,10 @@
+{
+  "description": "This web app streamlines emergency medical response by providing a high-contrast interface for paramedics and patients, ensuring quick access to critical health information.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
