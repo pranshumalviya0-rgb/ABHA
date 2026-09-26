@@ -7,16 +7,15 @@ const connectDB = async () => {
 
   try {
     const conn = await mongoose.connect(mongoURI, {
-      serverSelectionTimeoutMS: 10000,
-      socketTimeoutMS: 45000,
-      family: 4 // Use IPv4, skip IPv6 DNS lookups which can timeout on Windows
+      serverSelectionTimeoutMS: 15000,
+      socketTimeoutMS: 45000
     });
     isConnected = true;
     console.log(`MongoDB Connected: ${conn.connection.host}`);
   } catch (error) {
     isConnected = false;
-    console.error(`Database Connection Error: ${error.message}. Retrying in 3s...`);
-    setTimeout(connectDB, 3000);
+    console.error(`Database Connection Error: ${error.message}. Retrying in 5s...`);
+    setTimeout(connectDB, 5000);
   }
 };
 
